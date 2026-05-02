@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Breath</title>
+
+
+<style>
+:root {
+    --primary: #0d9488;
+    --secondary: #14b8a6;
+    --accent: #22c55e;
+    --dark: #0f172a;
+    --light: #f1f5f9;
+    --white: #ffffff;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #eef2f7);
+    color: var(--dark);
+}
+
+/* HEADER (GLASS EFFECT) */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.logo img {
+    width: 42px;
+    border-radius: 50%;
+}
+
+/* NAV */
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    height: 75vh;
+    background: linear-gradient(rgba(4, 5, 5, 0.75), rgba(40, 41, 41, 0.384)),
+                url('images/body.png') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    max-width: 700px;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* CTA BUTTONS */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* MAIN */
+#main-container {
+    padding: 100px 50px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+
+/* CARDS */
+.articles {
+    background: var(--white);
+    margin-bottom: 40px;
+    /*border-radius: 15px;*/
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.articles:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.articles h2 {
+    padding: 18px;
+    font-size: 1.4rem;
+    background-color: #ffffff7a;
+    color: rgb(42, 103, 105);
+}
+
+/* CONTENT GRID */
+.content-holder {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    padding: 25px;
+}
+
+.content img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.content p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.content span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .content-holder {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+}
+</style>
+<link rel="stylesheet" href="slidepart.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Healthy Breath</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Devices</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Breathe Better. Live Healthier.</h1>
+    <p>Your trusted guide to oxygen health, wellness, and medical awareness.</p>
+
+    <div class="hero-buttons">
+        <a href="#" class="btn-primary">Explore Articles</a>
+        <a href="#" class="btn-outline">Learn More</a>
+    </div>
+</div>
+
+<!-- MAIN -->
+
+
+
+<div id="main-container">
+    
+<div class="slider">
+    <div class="slides">
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df" />
+            <div class="caption">Portable Oxygen Concentrator</div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" />
+            <div class="caption">Hospital Oxygen Supply System</div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b" />
+            <div class="caption">Home Oxygen Therapy Equipment</div>
+        </div>
+    </div>
+</div>
+
+    <h2 class="section-title">Health Insights</h2>
+
+    <div class="articles">
+        <h2>The Importance of Oxygen</h2>
+        <div class="content-holder">
+            <div class="content">
+                <img src="images/concentrato.webp">
+            </div>
+            <div class="content">
+                <p>
+                    Medical Oxygen is an essential drug used in the treatment of hypoxemia,
+                    pneumonia, COVID-19, and emergency care.
+                </p>
+                <p>
+                    Proper oxygen levels ensure that your organs function efficiently
+                    and reduce fatigue.
+                </p>
+                <p>
+                    <span>Important:</span> Oxygen must always be prescribed by a medical
+                    professional to avoid serious complications.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="articles">
+        <h2>Eye Health</h2>
+        <div class="content-holder">
+            <div class="content">
+                <img src="images/mask.png">
+            </div>
+            <div class="content">
+                <p>
+                   
+                </p>
+                <p>
+                 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="articles">
+        <h2>Oxygen Sources</h2>
+        <div class="content-holder">
+            <div class="content">
+                <img src="images/concentrato.webp">
+            </div>
+            <div class="content">
+                <p>
+                    Oxygen delivery systems include concentrators, cylinders, and hospital pipelines.
+                </p>
+                <p>
+                    <span>Oxygen Concentrator:</span> A device that filters oxygen from ambient air
+                    and delivers purified oxygen for medical use.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+}
+</script>
+</body>
+</html>
